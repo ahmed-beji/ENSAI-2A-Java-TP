@@ -1,0 +1,185 @@
+[
+    {
+        "type": "song",
+        "title": "Strong",
+        "singer": {
+            "firstName": "Hannah",
+            "lastName": "Reid",
+            "nationality": "UK"
+        },
+        "year": 2013,
+        "duration": 240,
+        "lyrics": "Excuse me for a while,\nWhile I'm wide-eyed and caught in the middle,\nI will find my way through this.",
+        "genres": [
+            "INDIE_POP"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Lose Your Head",
+        "singer": {
+            "firstName": "Hannah",
+            "lastName": "Reid",
+            "nationality": "UK"
+        },
+        "year": 2021,
+        "duration": 230,
+        "lyrics": "Feel the tension rise,\nDon't be afraid to fall,\nSometimes you have to lose your head.",
+        "genres": [
+            "INDIE_POP",
+            "ELECTRONIC"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Oh Woman Oh Man",
+        "singer": {
+            "firstName": "Hannah",
+            "lastName": "Reid",
+            "nationality": "UK"
+        },
+        "year": 2017,
+        "duration": 260,
+        "lyrics": "Oh woman, oh man,\nWe dance through the night,\nNothing else feels quite like this.",
+        "genres": [
+            "INDIE_POP"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Non Believer",
+        "singer": {
+            "firstName": "Hannah",
+            "lastName": "Reid",
+            "nationality": "UK"
+        },
+        "year": 2017,
+        "duration": 250,
+        "lyrics": "I don't believe in lies,\nTruths hidden in the dark,\nSearching for light inside.",
+        "genres": [
+            "INDIE_POP"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Break My Heart",
+        "singer": {
+            "firstName": "Dua",
+            "lastName": "Lipa",
+            "nationality": "UK"
+        },
+        "year": 2020,
+        "duration": 221,
+        "lyrics": "I should've stayed at home,\n'Cause I was doing better alone,\nBut love called and I fell.",
+        "genres": [
+            "POP",
+            "DISCO"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Illusion",
+        "singer": {
+            "firstName": "Dua",
+            "lastName": "Lipa",
+            "nationality": "UK"
+        },
+        "year": 2024,
+        "duration": 210,
+        "lyrics": "Caught in an illusion,\nA world that’s not quite real,\nHoping for a way to feel.",
+        "genres": [
+            "POP",
+            "DANCE"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Blow Your Mind",
+        "singer": {
+            "firstName": "Dua",
+            "lastName": "Lipa",
+            "nationality": "UK"
+        },
+        "year": 2016,
+        "duration": 178,
+        "lyrics": "I don't need your validation,\nI am what I am,\nWatch me blow your mind.",
+        "genres": [
+            "POP"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Never Give Up",
+        "singer": {
+            "firstName": "Sia",
+            "lastName": null,
+            "nationality": "AU"
+        },
+        "year": 2016,
+        "duration": 220,
+        "lyrics": "I will rise again,\nThrough the storm and pain,\nNever give up, never give in.",
+        "genres": [
+            "POP"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Cheap Thrills",
+        "singer": {
+            "firstName": "Sia",
+            "lastName": null,
+            "nationality": "AU"
+        },
+        "year": 2016,
+        "duration": 225,
+        "lyrics": "Come on, come on, turn the music up,\nWe don’t need no money to have fun,\nDance and laugh all night long.",
+        "genres": [
+            "POP",
+            "DANCE"
+        ]
+    },
+    {
+        "type": "song",
+        "title": "Unstoppable",
+        "singer": {
+            "firstName": "Sia",
+            "lastName": null,
+            "nationality": "AU"
+        },
+        "year": 2016,
+        "duration": 217,
+        "lyrics": "I'm unstoppable today,\nNo one can hold me down,\nFeel the power inside my soul."
+    },
+    {
+        "type": "podcast",
+        "title": "Facing up to our predation",
+        "host": "Aurélien Barrau",
+        "topic": "Mathematics, Ethics & Society",
+        "year": 2023,
+        "duration": 5400
+    },
+    {
+        "type": "podcast",
+        "title": "Mining Realities and Material Limits",
+        "host": "Aurore Stéphant",
+        "topic": "Mining, Resource Scarcity & Energy Transition",
+        "year": 2024,
+        "duration": 6000
+    },
+    {
+        "type": "podcast",
+        "title": "Why Everyone Ignores the Climate",
+        "host": "Albert Moukheiber",
+        "topic": "Neuroscience & Climate Inaction",
+        "year": 2023,
+        "duration": 4800
+    },
+    {
+        "type": "podcast",
+        "title": "Why Technology Threatens Us",
+        "host": "Asma Mhalla",
+        "topic": "Technology, AI & Society",
+        "year": 2024,
+        "duration": 4500
+    }
+]

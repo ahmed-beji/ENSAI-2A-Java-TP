@@ -1,0 +1,21 @@
+{
+    "workbench.colorTheme": "Default Dark Modern",
+    "editor.fontSize": 16,
+    "editor.formatOnSave": true,
+    "editor.tabSize": 4,
+    "explorer.compactFolders": false,
+    "[java]": {
+        "editor.wordWrap": "wordWrapColumn",
+        "editor.wrappingIndent": "indent",
+        "editor.wordWrapColumn": 120,
+        "editor.rulers": [
+            120
+        ],
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit",
+            "source.addMissingImports": "explicit"
+        },
+        "editor.inlayHints.enabled": "off",
+    },
+    "java.configuration.updateBuildConfiguration": "interactive"
+}

@@ -1,0 +1,34 @@
+Configuration:
+  status: warn
+
+  Appenders:
+    File:
+      name: FILE
+      fileName: logs/elevator-${date:HH.mm.ss}.log
+      append: true
+      PatternLayout:
+        pattern: "%msg%n"
+
+    Console:
+      name: CONSOLE
+      target: SYSTEM_OUT
+      PatternLayout:
+        pattern: "%msg%n"
+      ThresholdFilter:
+        level: warn
+        onMatch: ACCEPT
+        onMismatch: DENY
+
+  Loggers:
+    Logger:
+      - name: fr.ensai.elevator
+        level: info
+        additivity: false
+        AppenderRef:
+          - ref: FILE
+          - ref: CONSOLE
+
+    Root:
+      level: error
+      AppenderRef:
+        - ref: FILE
