@@ -6,12 +6,53 @@ import java.util.Scanner;
 
 public class Login {
     public static void main(String[] args) {
-        HashMap<String, String> userDatabase = loadUserDatabase("../data/user_hashpwd.csv");
-        Scanner scanner = new Scanner(System.in);
+        // 1. Chargement de la base de données
+        // J'ai mis un chemin générique, assure-toi qu'il correspond à ton fichier
+        HashMap<String, String> userDatabase = loadUserDatabase("data/user_hashpwd.csv");
 
-        while (true) {
+        // Fail-fast : Si la base est vide (fichier introuvable ou erreur), on stoppe
+        // tout.
+        if (userDatabase.isEmpty()) {
+            System.out.println("Erreur critique : Impossible de charger la base de données. Arrêt du système.");
+            return; // Le return vide dans un 'void main' arrête le programme.
+        }
 
-            // Code here
+        System.out.println("--- Système d'Authentification ---");
+
+        // 2. Le Try-With-Resources (CRITIQUE pour la gestion mémoire)
+        // Déclarer le Scanner ici garantit qu'il sera fermé automatiquement à la fin,
+        // ce qui règle l'avertissement jaune que tu avais sur ton éditeur.
+        try (Scanner scanner = new Scanner(System.in)) {
+
+            // 3. La boucle infinie contrôlée
+            while (true) {
+                System.out.print("Entrez votre nom d'utilisateur (ou 'exit' pour quitter) : ");
+                String username = scanner.nextLine();
+
+                if (username.equalsIgnoreCase("exit")) {
+                    System.out.println("Fermeture du programme...");
+                    break;
+                }
+
+                System.out.print("Entrez votre mot de passe : ");
+                String password = scanner.nextLine();
+
+                // 4. Vérification
+                if (userDatabase.containsKey(username)) {
+                    String storedHash = userDatabase.get(username);
+
+                    // Note de sécurité : Si la BDD contient des mots de passe hashés,
+                    // il faudrait appeler hashPassword(password) ici avant le .equals()
+                    if (password.equals(storedHash)) {
+                        System.out.println("Connexion réussie ! Accès autorisé pour : " + username);
+                        break; // On casse la boucle, l'utilisateur est connecté.
+                    } else {
+                        System.out.println("Erreur : Identifiant ou mot de passe incorrect.\n");
+                    }
+                } else {
+                    System.out.println("Erreur : Identifiant ou mot de passe incorrect.\n");
+                }
+            }
         }
     }
 

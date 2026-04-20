@@ -1,5 +1,6 @@
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -39,10 +40,19 @@ public class Password {
      * @return the 6-digit number that matches, or null if no match is found
      */
     public static String bruteForce6Digit(String targetHash) {
+        String newHash = hashPassword(String.format("%06d", 0));
+        int compteur = 0;
+        while (!newHash.equals(targetHash) && compteur < 999999) {
+            compteur++;
+            newHash = hashPassword(String.format("%06d", compteur));
 
-        // Code here
+        }
+        if (newHash.equals(targetHash)) {
+            return String.format("%06d", compteur);
 
+        }
         return null;
+
     }
 
     /**
@@ -60,10 +70,30 @@ public class Password {
      * @return true if the password is strong, false otherwise
      */
     public static boolean isStrongPassword(String password) {
+        if (password.length() < 12) {
+            return false;
+        }
+        boolean hasUpper = false;
+        boolean hasLower = false;
+        boolean hasDigit = false;
+        for (int i = 0; i < password.length(); i++) {
+            char c = password.charAt(i);
+            if (Character.isWhitespace(c)) {
+                return false;
 
-        // Code here
+            }
+            if (Character.isUpperCase(c)) {
+                hasUpper = true;
 
-        return false;
+            } else if (Character.isLowerCase(c)) {
+                return hasLower = true;
+
+            } else if (Character.isDigit(c)) {
+                hasDigit = true;
+
+            }
+        }
+        return hasDigit && hasLower && hasUpper;
     }
 
     /**
@@ -94,10 +124,46 @@ public class Password {
      * @return A randomly generated password that meets the security criteria.
      */
     public static String generatePassword(int nbCar) {
+        if (nbCar < 4) {
+            throw new IllegalArgumentException("La longueur du mot de passe doit être au moins de 4.");
+        }
 
-        // Code here
+        // Définition des "seaux" de caractères
+        String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        String lower = "abcdefghijklmnopqrstuvwxyz";
+        String digits = "0123456789";
+        String special = "!@#$%^&*()-_=+[]{}|;:,.<>/?";
+        String allChars = upper + lower + digits + special;
 
-        return null;
+        SecureRandom random = new SecureRandom();
+        // On utilise un StringBuilder pour construire la chaîne efficacement
+        StringBuilder password = new StringBuilder();
+
+        // 2. Garantir les 4 critères obligatoires
+        password.append(upper.charAt(random.nextInt(upper.length())));
+        password.append(lower.charAt(random.nextInt(lower.length())));
+        password.append(digits.charAt(random.nextInt(digits.length())));
+        password.append(special.charAt(random.nextInt(special.length())));
+
+        // 3. Remplir le reste jusqu'à atteindre la taille demandée (nbCar)
+        for (int i = 4; i < nbCar; i++) {
+            password.append(allChars.charAt(random.nextInt(allChars.length())));
+        }
+
+        // 4. Mélanger le mot de passe pour casser le motif prévisible
+        // On convertit le StringBuilder en tableau de caractères pour échanger leurs
+        // places
+        char[] passwordArray = password.toString().toCharArray();
+        for (int i = 0; i < passwordArray.length; i++) {
+            int randomIndex = random.nextInt(passwordArray.length);
+            // Échange classique de variables (Swap)
+            char temp = passwordArray[i];
+            passwordArray[i] = passwordArray[randomIndex];
+            passwordArray[randomIndex] = temp;
+        }
+
+        // On retourne le tableau de caractères converti en String
+        return new String(passwordArray);
     }
 
     public static void main(String[] args) {
