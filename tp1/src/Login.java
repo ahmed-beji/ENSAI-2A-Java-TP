@@ -38,6 +38,7 @@ public class Login {
                 String password = scanner.nextLine();
 
                 // 4. Vérification
+                // test
                 if (userDatabase.containsKey(username)) {
                     String storedHash = userDatabase.get(username);
 
