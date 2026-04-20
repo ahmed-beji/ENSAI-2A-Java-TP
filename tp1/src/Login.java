@@ -39,6 +39,7 @@ public class Login {
 
                 // 4. Vérification
                 // test
+                // test 2
                 if (userDatabase.containsKey(username)) {
                     String storedHash = userDatabase.get(username);
 
